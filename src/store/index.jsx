@@ -7,7 +7,10 @@ const moviesSlice = createSlice({
         addMovie(state, action) {
             state.push(action.payload);
         },
-        removeMovie(state, action) {},
+        removeMovie(state, action) {
+            const index = state.indexOf(action.payload);
+            state.splice(index, 1);
+        },
     },
 });
 
